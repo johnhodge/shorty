@@ -18,21 +18,21 @@
       <h1 class="display-4">Short URLs for Hodge</h1>
     </header>
     <main id="app">
-      <form @submit.prevent="createUrl()">
+      <form @submit.prevent="createUrl()" novalidate>
         <!-- <label for="url" placeholder="URL"></label> -->
-        <input v-model="url" type="text" name="url" id="url" placeholder="URL">
+        <input v-model="url" type="url" name="url" id="url" placeholder="URL">
         <!-- <label for="slug"></label> -->
-        <input v-model="slug" type="text" name="slug" id="slug" placeholder="Slug">
+        <input v-model="slug" type="text" name="slug" id="slug" placeholder="Custom slug (optional)">
         <button type="submit">Create</button>
       </form>
       <div v-if="created">
         <div class="notification error" v-if="created.message">
-          <h3 class="text-error">Not so fast.</h3>
-          <p>{{created.message}}</p>
+          <h3 class="text-error">🛑 Not so fast.</h3>
+          <p class="link-message">{{created.message}}</p>
         </div>
         <div class="notification success" v-else>
-          <h3 class="text-success">Link generated successfully!</h3>
-          <p class="short-link">{{link}}</p>
+          <h3 class="text-success">✅ Link generated successfully!</h3>
+          <p class="link-message">{{link}}</p>
         </div>
       </div>
     </main>

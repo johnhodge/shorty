@@ -27,7 +27,7 @@ app.listen(port, () => {
 })
 
 let schema = yup.object().shape({
-  slug: yup.string().trim().matches(/[\w\-]/i),
+  slug: yup.string().trim().matches(/^[\w|\-|\0]{0,}$/i).max(10),
   url: yup.string().trim().url().required(),
 })
 
@@ -78,7 +78,15 @@ app.post('/url', async (req, res, next) => {
     res.json(created);
   } catch (error) {
     if (error.message.startsWith('E11000')) {
-      error.message = 'Slug in use 🐛'
+      error.message = 'Slug in use 🧀'
+    } else if (error.message.startsWith('slug must match the following')) {
+      error.message = 'Slug contains invalid characters 🍔'
+    } else if (error.message.startsWith('slug must be at most')) {
+      error.message = 'Slug exceeds 10 character maximum 🥡'
+    } else if (error.message.startsWith('url is a required field')) {
+      error.message = 'URL is a required field 🧇'
+    } else if (error.message.startsWith('url must be a valid URL')) {
+      error.message = 'URL must be a valid URL 🍟'
     }
     next(error);
   }

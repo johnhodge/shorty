@@ -24,7 +24,7 @@ var app = new Vue({
         })
       });
       this.created = await response.json();
-      this.link = `${this.host}${this.slug}`
+      this.link = `${this.host}${this.created.slug}`
     }
   }
 })
