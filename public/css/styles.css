@@ -1,0 +1,110 @@
+:root {
+  --root-font-size: calc(1vw + 8px);
+  --font-family-body: "Hero New Light";
+  --font-family-header: "Hero New Super";
+  --font-size-biggest: 5rem;
+  --font-size-bigger: 4rem;
+  --font-size-big: 3rem;
+  --font-size-medium: 2rem;
+  --font-size-standard: 1rem;
+  --font-size-small: .7rem;
+  --color-shade-1: #fff;
+  --color-shade-2: rgb(172, 172, 172);
+  --color-shade-3: rgb(124, 124, 124);
+  --color-shade-4: rgb(56, 56, 56);
+  --color-shade-5: rgb(0, 0, 0);
+  --color-accent-1: rgb(65, 154, 255);
+  --color-error: rgb(255, 65, 65);
+  --color-error-light: #ffdddd;
+  --color-success: rgb(43, 155, 29);
+  --color-success-light: rgb(168, 211, 162);
+  --border-standard: 2px var(--color-shade-5) solid;
+  --border-error: 2px var(--color-error) solid;
+  --border-success: 2px var(--color-success) solid;
+  --line-height-standard: 1.2;
+  --text-shadow-small: 2px 2px 6px rgba(0,0,0,0.15);
+  --sizing-small: .25rem;
+  --sizing-standard: .5rem;
+  --sizing-medium: 1rem;
+  --sizing-big: 1rem;
+  --sizing-bigger: 2rem;
+  --sizing-biggest: 3rem;
+  --width-small: min(17rem, 90vw);
+  --width-standard: min(40rem, 90vw);
+}
+
+:focus,:focus-visible,:focus-within,:active {
+  border-color: var(--color-accent-1);
+  outline: var(--color-accent-1);
+}
+
+* {
+  transition: all ease-in-out .12s;
+}
+
+body {
+  font-family: var(--font-family-body);
+  margin: 0
+}
+
+.container {
+  width: var(--width-standard);
+  margin: auto;
+}
+
+h1,h2,h3,h4 {
+  font-family: var(--font-family-header);
+  line-height: var(--line-height-standard);
+}
+
+
+h1.display-4 {
+  font-size: var(--font-size-biggest);
+}
+
+button, input {
+  padding: var(--sizing-standard);
+  border-radius: var(--sizing-small);
+  border: var(--border-standard);
+  font-size: var(--font-size-normal);
+  margin: var(--sizing-small) 0;
+}
+
+input {
+  width: var(--width-small);
+}
+
+button {
+  background: var(--color-shade-1);
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--color-accent-1);
+  border: var(--border-standard);
+}
+
+.notification {
+  padding: var(--sizing-standard);
+  border-radius: var(--sizing-small);
+  font-size: var(--font-size-normal);
+  margin: var(--sizing-small) 0;
+  text-shadow: var(--text-shadow-small);
+}
+
+.error {
+  border: var(--border-error);
+  color: var(--color-error);
+  background: var(--color-error-light);
+}
+
+.success {
+  border: var(--border-success);
+  color: var(--color-success);
+  background: var(--color-success-light);
+}
+
+.short-link {
+  color: var(--color-shade-5);
+  text-shadow: var(--text-shadow-small);
+}

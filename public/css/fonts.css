@@ -1,0 +1,21 @@
+@font-face{
+  font-family: "VAL";
+  src: url('https://johnhodge.com/fonts/VAL.otf');
+}
+
+@font-face {
+  font-family: 'Hero New Super';
+  src: url('https://johnhodge.com/fonts/hero_new_super-webfont.woff2') format('woff2'),
+       url('https://johnhodge.com/fonts/hero_new_super-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Hero New Light';
+  src: url('https://johnhodge.com/fonts/hero_new_light-webfont.woff2') format('woff2'),
+       url('https://johnhodge.com/fonts/hero_new_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

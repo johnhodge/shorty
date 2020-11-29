@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shorty!</title>
+
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="img/favicon.ico" />
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1 class="display-4">Short URLs for Hodge</h1>
+    </header>
+    <main id="app">
+      <form @submit.prevent="createUrl()">
+        <!-- <label for="url" placeholder="URL"></label> -->
+        <input v-model="url" type="text" name="url" id="url" placeholder="URL">
+        <!-- <label for="slug"></label> -->
+        <input v-model="slug" type="text" name="slug" id="slug" placeholder="Slug">
+        <button type="submit">Create</button>
+      </form>
+      <div v-if="created">
+        <div class="notification error" v-if="created.message">
+          <h3 class="text-error">Not so fast.</h3>
+          <p>{{created.message}}</p>
+        </div>
+        <div class="notification success" v-else>
+          <h3 class="text-success">Link generated successfully!</h3>
+          <p class="short-link">{{link}}</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
