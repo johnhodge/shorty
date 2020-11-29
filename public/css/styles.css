@@ -1,7 +1,7 @@
 :root {
   --root-font-size: calc(1vw + 8px);
-  --font-family-body: "Hero New Light";
-  --font-family-header: "Hero New Super";
+  --font-family-body: "Hero New Light", sans-serif;
+  --font-family-header: "Hero New Super", sans-serif;
   --font-size-biggest: 5rem;
   --font-size-bigger: 4rem;
   --font-size-big: 3rem;
