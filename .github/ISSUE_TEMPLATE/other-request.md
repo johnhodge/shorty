@@ -1,6 +1,6 @@
 ---
 name: Other request
-about: Suggest an idea for this project
+about: Request something else for this project
 title: 'Set the issue type followed by a colon (ex: style:, refactor:, perf:, etc)'
 labels: ''
 assignees: ''
