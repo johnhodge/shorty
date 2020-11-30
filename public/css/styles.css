@@ -32,7 +32,7 @@
   --sizing-big: 2rem;
   --sizing-bigger: 3rem;
   --sizing-biggest: 4rem;
-  --sizing-huge: 5.5rem;
+  --sizing-huge: 5rem;
   --width-small: min(15rem, 95%);
   --width-standard: min(30rem, 95%);
   --width-big: min(40rem, 95%);
@@ -56,16 +56,12 @@
 
 h1,h2,h3,h4 {
   font-family: var(--font-family-header);
-  line-height: var(--line-height-standard);
+  line-height: 1;
 }
 
 h1.display-4 {
   font-size: var(--font-size-biggest);
-  margin: 0;
-}
-
-body, html, #app, .global_container {
-  height: 100%;
+  margin: var(--sizing-medium) auto;
 }
 
 body {
@@ -140,18 +136,12 @@ button:hover {
   transition: background .2s ease-in-out;
 }
 
-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 section.global_container__main_section{
-  height: 75%
+  margin: var(--sizing-medium) auto;
 }
 
 section.main_section__notifications {
-  height: 20%;
+  margin: var(--sizing-medium) auto;
 }
 
 .notifications__notif_bucket {
