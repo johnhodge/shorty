@@ -13,28 +13,34 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1 class="display-4">Short URLs for Hodge</h1>
-    </header>
+  <div class="global_container">
     <main id="app">
-      <form @submit.prevent="createUrl()" novalidate>
-        <!-- <label for="url" placeholder="URL"></label> -->
-        <input v-model="url" type="url" name="url" id="url" placeholder="URL">
-        <!-- <label for="slug"></label> -->
-        <input v-model="slug" type="text" name="slug" id="slug" placeholder="Custom slug (optional)">
-        <button type="submit">Create</button>
-      </form>
-      <div v-if="created">
-        <div class="notification error" v-if="created.message">
-          <h3 class="text-error">🛑 Not so fast.</h3>
-          <p class="link-message">{{created.message}}</p>
+      <section class="global_container__main_section">
+        <div class="main_section__card">
+          <header>
+            <h1 class="display-4">Short URLs for Hodge</h1>
+          </header>
+          <form class="card__url_form" @submit.prevent="createUrl()" novalidate>
+            <!-- <label for="url" placeholder="URL"></label> -->
+            <input v-model="url" type="url" name="url" id="url" placeholder="URL">
+            <!-- <label for="slug"></label> -->
+            <input v-model="slug" type="text" name="slug" id="slug" placeholder="Slug">
+            <button type="submit">Create</button>
+          </form>
         </div>
-        <div class="notification success" v-else>
-          <h3 class="text-success">✅ Link generated successfully!</h3>
-          <p class="link-message">{{link}}</p>
+      </section>
+      <section class="main_section__notifications">
+        <div class="notifications__notif_bucket" v-if="created" v-cloak>
+          <div class="notif_bucket__notification error" v-if="created.message">
+            <h3 class="text-error">🛑 Not so fast.</h3>
+            <p class="link-message">{{created.message}}</p>
+          </div>
+          <div class="notif_bucket__notification success" v-else v-cloak>
+            <h3 class="text-success">✅ Link generated successfully!</h3>
+            <p class="link-message">{{link}}</p>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>

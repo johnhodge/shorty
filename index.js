@@ -44,7 +44,7 @@ const urls = db.get('urls');
 // Set up mongo index
 urls.createIndex({ "slug": 1 }, { unique: true })
 
-// Todo: Redict short URL
+// Redict short URL
 app.get('/:id', async (req, res, next) => {
   const { id: slug } = req.params;
   try {
