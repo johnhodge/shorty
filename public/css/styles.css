@@ -1,15 +1,15 @@
 @import url('fonts.css');
 
 :root {
-  --root-font-size: calc(1vw + 8px);
   --font-family-body: "Hero New Light", sans-serif;
   --font-family-header: "Hero New Super Italic", sans-serif;
-  --font-size-biggest: 5rem;
-  --font-size-bigger: 4rem;
-  --font-size-big: 3rem;
-  --font-size-medium: 2rem;
-  --font-size-standard: 1rem;
+  --font-size-root: calc(1vw + 8px);
   --font-size-small: .7rem;
+  --font-size-standard: 1rem;
+  --font-size-medium: 2rem;
+  --font-size-big: 3rem;
+  --font-size-bigger: 4rem;
+  --font-size-biggest: 5rem;
   --color-shade-1: #fff;
   --color-shade-2: rgb(172, 172, 172);
   --color-shade-3: rgb(124, 124, 124);
@@ -46,6 +46,10 @@
 
 [v-cloak] {
   display: none;
+}
+
+html {
+  font-size: max(16px,var(--font-size-root));
 }
 
 :focus,:focus-visible,:focus-within,:active {
