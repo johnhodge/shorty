@@ -3,10 +3,11 @@ var app = new Vue({
   data: {
     url: '',
     slug: '',
-    host: document.location.href,
+    host: document.location.href.split('?')[0],
     created: null,
     message: '',
     error: '',
+    not_found: decodeURI(document.location.href.split('=')[1])
   },
   methods: {
     async createUrl() {
@@ -21,6 +22,7 @@ var app = new Vue({
           host: this.host,
           message: this.message,
           error: this.error.message,
+          not_found: this.not_found
         })
       });
       this.created = await response.json();
