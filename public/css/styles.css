@@ -1,10 +1,10 @@
-@import url('fonts.css');
+@import url("fonts.css");
 
 :root {
   --font-family-body: "Hero New Light", sans-serif;
   --font-family-header: "Hero New Super Italic", sans-serif;
   --font-size-root: calc(1vw + 8px);
-  --font-size-small: .7rem;
+  --font-size-small: 0.7rem;
   --font-size-standard: 1rem;
   --font-size-medium: 2rem;
   --font-size-big: 3rem;
@@ -25,9 +25,9 @@
   --border-error: 2px var(--color-error) solid;
   --border-success: 2px var(--color-success) solid;
   --line-height-standard: 1.2;
-  --text-shadow-small: 2px 2px 6px rgba(0,0,0,0.15);
-  --sizing-small: .25rem;
-  --sizing-standard: .5rem;
+  --text-shadow-small: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  --sizing-small: 0.25rem;
+  --sizing-standard: 0.5rem;
   --sizing-medium: 1rem;
   --sizing-big: 2rem;
   --sizing-bigger: 3rem;
@@ -49,16 +49,26 @@
 }
 
 html {
-  font-size: max(16px,var(--font-size-root));
+  font-size: max(16px, var(--font-size-root));
 }
 
-:focus,:focus-visible,:focus-within,:active {
+:focus,
+:focus-visible,
+:focus-within,
+:active {
   border-color: var(--color-accent);
   outline: var(--color-accent-1);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-h1,h2,h3,h4 {
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-family-header);
   line-height: 1;
 }
@@ -70,7 +80,7 @@ h1.display-4 {
 
 body {
   font-family: var(--font-family-body), sans-serif;
-  margin: 0
+  margin: 0;
 }
 
 .global_container {
@@ -86,10 +96,10 @@ body {
 }
 
 .main_section__card {
-    padding: var(--sizing-big);
-    border-radius: var(--sizing-medium);
-    box-shadow: 15px 15px 30px rgba(0,0,0,0.12);
-    height: fit-content;
+  padding: var(--sizing-big);
+  border-radius: var(--sizing-medium);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.12);
+  height: fit-content;
 }
 
 .card__url_form {
@@ -101,21 +111,22 @@ body {
   margin: var(--sizing-standard) 0;
 }
 
-button, input {
+button,
+input {
   padding: var(--sizing-standard);
   border-radius: var(--sizing-small);
   border: var(--border-standard);
   font-size: var(--font-size-normal);
 }
 
-input{
+input {
   grid-row: 1;
 }
 
-input:hover{
+input:hover {
   border-color: var(--color-accent);
   outline: var(--color-accent-1);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 input#url {
@@ -137,10 +148,10 @@ button:hover {
   background: var(--color-accent-light);
   border: var(--border-standard);
   border-color: var(--color-accent);
-  transition: background .2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
-section.global_container__main_section{
+section.global_container__main_section {
   margin: var(--sizing-medium) auto;
 }
 
@@ -157,7 +168,7 @@ section.main_section__notifications {
   border-radius: var(--sizing-medium);
   font-size: var(--font-size-normal);
   text-shadow: var(--text-shadow-small);
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-name: fade-slidein;
 }
 
@@ -191,6 +202,5 @@ section.main_section__notifications {
 }
 
 p.link-message {
-  height: var(--sizing-medium)
+  height: var(--sizing-medium);
 }
-

@@ -37,7 +37,7 @@
           </div>
           <div class="notif_bucket__notification success" v-else v-cloak>
             <h3 class="text-success">✅ Link generated successfully</h3>
-            <p class="link-message">{{link}}</p>
+            <p class="link-message"><a v-bind:href="link" target="_blank">{{link}}</a></p>
           </div>
         </div>
         <div class="notifications__notif_bucket" v-else-if="not_found!='undefined'" v-cloak>
