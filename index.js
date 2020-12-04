@@ -59,7 +59,7 @@ app.get('/:id', async (req, res, next) => {
 });
 
 // POST to Create short URL
-app.post('/url', async (req, res, next) => {
+app.post('/api/v1/url', async (req, res, next) => {
   let { url, slug } = req.body;
   try {
     await schema.validate({
