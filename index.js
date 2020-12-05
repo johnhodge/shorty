@@ -44,20 +44,6 @@ const urls = db.get('urls');
 // Set up mongo index
 urls.createIndex({ "slug": 1 }, { unique: true })
 
-// Redict short URL
-app.get('/:id', async (req, res, next) => {
-  const { id: slug } = req.params;
-  try {
-    const url = await urls.findOne({ slug });
-    if (url) {
-      res.redirect(url.url);
-    }
-    res.redirect(`/?error=Slug: '${slug}' not found`)
-  } catch (error) {
-    res.redirect(`/?error=Link not found`)
-  }
-});
-
 // POST to Create short URL
 app.post('/api/v1/url', async (req, res, next) => {
   let { url, slug } = req.body;
@@ -103,5 +89,21 @@ app.use((error, req, res, next) => {
     message: error.message,
     stack: process.env.NODE_ENV === 'production' ? '🥞' : error.stack
   })
-})
+});
+
+// Redict short URL
+app.get('/:id', async (req, res, next) => {
+  const { id: slug } = req.params;
+  try {
+    const url = await urls.findOne({ slug });
+    if (url) {
+      res.redirect(url.url);
+    } else {
+    res.redirect(`/?error=Slug: '${slug}' not found`);
+    }
+  } catch (error) {
+    res.redirect(`/?error=Link not found`);
+  }
+});
+
 module.exports = app;
