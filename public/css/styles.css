@@ -26,6 +26,9 @@
   --border-success: 2px var(--color-success) solid;
   --line-height-standard: 1.2;
   --text-shadow-small: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  --box-shadow-standard: 5px 5px 10px rgba(0, 0, 0, 0.12);
+  --box-shadow-medium: 15px 15px 30px rgba(0, 0, 0, 0.12);
+  --box-shadow-big: 25px 25px 50px rgba(0, 0, 0, 0.12);
   --sizing-small: 0.25rem;
   --sizing-standard: 0.5rem;
   --sizing-medium: 1rem;
@@ -90,7 +93,7 @@ body {
 .main_section__card {
   padding: var(--sizing-big);
   border-radius: var(--sizing-medium);
-  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--box-shadow-medium);
   height: fit-content;
 }
 
