@@ -27,8 +27,8 @@ app.listen(port, () => {
 })
 
 let schema = yup.object().shape({
-  slug: yup.string().trim().matches(/^[\w|\-|\0]{0,}$/i).max(10),
-  url: yup.string().trim().url().required(),
+  slug: yup.string().max(10).matches(/^[\w|\-|\0]{0,}$/i),
+  url: yup.string().url().required(),
 })
 
 // Connect to mongo
