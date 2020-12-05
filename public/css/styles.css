@@ -108,6 +108,7 @@ body {
 
 button,
 input {
+  font-family: inherit;
   padding: var(--sizing-standard);
   border-radius: var(--sizing-small);
   border: var(--border-standard);
