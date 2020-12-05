@@ -31,20 +31,15 @@ let schema = yup.object().shape({
   url: yup.string().url().required(),
 })
 
-// Connect to mongo
 const mongoUri = process.env.MONGODB_URI
 const db = monk(mongoUri);
 db.then(() => {
   console.log(`Connected to: ${mongoUri}`)
 })
 
-// Set up mongo collection
 const urls = db.get('urls');
-
-// Set up mongo index
 urls.createIndex({ "slug": 1 }, { unique: true })
 
-// POST to Create short URL
 app.post('/api/v1/url', async (req, res, next) => {
   let { url, slug } = req.body;
   try {
@@ -78,7 +73,6 @@ app.post('/api/v1/url', async (req, res, next) => {
   }
 });
 
-// Error handler
 app.use((error, req, res, next) => {
   if (error.status) {
     res.status(error.status);
@@ -91,7 +85,6 @@ app.use((error, req, res, next) => {
   })
 });
 
-// Redict short URL
 app.get('/:id', async (req, res, next) => {
   const { id: slug } = req.params;
   try {
