@@ -111,7 +111,7 @@ input {
   padding: var(--sizing-standard);
   border-radius: var(--sizing-small);
   border: var(--border-standard);
-  font-size: var(--font-size-normal);
+  font-size: var(--font-size-standard);
   width: -moz-available;
 }
 
@@ -121,8 +121,7 @@ input {
 
 input:hover,
 input:active,
-input:focus,
-input:focus-visible {
+input:focus {
   color: var(--color-accent);
   border-color: var(--color-accent);
   outline: var(--color-accent-1);
@@ -146,8 +145,7 @@ button {
 
 button:hover,
 button:active,
-button:focus,
-button:focus-visible {
+button:focus {
   color: var(--color-accent);
   border: var(--border-standard);
   border-color: var(--color-accent);
