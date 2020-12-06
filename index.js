@@ -16,8 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
-  helmet({
-    contentSecurityPolicy: false,
+  helmet.contentSecurityPolicy({
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      "script-src": ["'self'", "'unsafe-eval'","cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"],
+    },
   }),
   helmet.permittedCrossDomainPolicies({
     permittedPolicies: "master-only",
