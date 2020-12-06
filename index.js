@@ -18,6 +18,9 @@ app.use(cookieParser());
 app.use(
   helmet({
     contentSecurityPolicy: false,
+  }),
+  helmet.permittedCrossDomainPolicies({
+    permittedPolicies: "master-only",
   })
 );
 app.use(express.static(path.join('public')));
