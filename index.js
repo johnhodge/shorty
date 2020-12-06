@@ -27,8 +27,12 @@ app.listen(port, () => {
 })
 
 let schema = yup.object().shape({
-  slug: yup.string().max(10).matches(/^[\w|\-|\0]{0,}$/i),
-  url: yup.string().url().required(),
+  slug: yup.string()
+  .max(10, 'Slug exceeds 10 character maximum 🥡')
+  .matches(/^[\w|\-|\0]{0,}$/i,'Slug contains invalid characters 🍔'),
+  url: yup.string()
+  .url('URL must be a valid URL 🍟')
+  .required('URL is a required field 🧇'),
 })
 
 const mongoUri = process.env.MONGODB_URI
@@ -60,14 +64,8 @@ app.post('/api/v1/url', async (req, res, next) => {
   } catch (error) {
     if (error.message.startsWith('E11000')) {
       error.message = 'Slug in use 🧀'
-    } else if (error.message.startsWith('slug must match the following')) {
-      error.message = 'Slug contains invalid characters 🍔'
-    } else if (error.message.startsWith('slug must be at most')) {
-      error.message = 'Slug exceeds 10 character maximum 🥡'
-    } else if (error.message.startsWith('url is a required field')) {
-      error.message = 'URL is a required field 🧇'
-    } else if (error.message.startsWith('url must be a valid URL')) {
-      error.message = 'URL must be a valid URL 🍟'
+    } else {
+      error.message = error.message
     }
     next(error);
   }
