@@ -9,16 +9,19 @@ const { nanoid } = require('nanoid');
 const monk = require('monk');
 
 const app = express();
+require('dotenv').config();
 
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static('public'));
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+app.use(express.static(path.join('public')));
 app.use(cors());
-
-require('dotenv').config();
 
 const port = process.env.PORT || 1234;
 const host = process.env.HOST || 'localhost';
