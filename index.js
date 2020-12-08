@@ -21,7 +21,6 @@ app.use(
   })
 );
 app.use(express.static(path.join('public')));
-app.use(cors());
 
 const port = process.env.PORT || 1234;
 const host = process.env.HOST || 'localhost';
