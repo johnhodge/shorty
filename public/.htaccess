@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.hod.ge [NC]
+RewriteRule ^(.*)$ http://hod.ge/$1 [L,R=301]
