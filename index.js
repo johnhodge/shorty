@@ -7,6 +7,8 @@ const cors = require('cors');
 const yup = require('yup');
 const { nanoid } = require('nanoid');
 const monk = require('monk');
+const rateLimit = require("express-rate-limit");
+const { json } = require('express');
 
 const app = express();
 require('dotenv').config();
@@ -19,7 +21,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-      "script-src": ["'self'", "'unsafe-eval'","cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"],
+      "script-src": ["'self'", "'unsafe-eval'", "cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"],
     },
   }),
   helmet.permittedCrossDomainPolicies({
@@ -29,6 +31,17 @@ app.use(
 app.use(express.static(path.join('public')));
 app.use(cors());
 
+app.set('trust proxy', 1);
+const apiLimiter = rateLimit({
+  windowMs: 30 * 1000,
+  max: 1,
+  message: {
+    message: 'Too many calls, hang on a second 🍩',
+    stack: '🥞'
+  }
+})
+app.use("/api/", apiLimiter);
+
 const port = process.env.PORT || 1234;
 const host = process.env.HOST || 'localhost';
 app.listen(port, () => {
@@ -37,11 +50,11 @@ app.listen(port, () => {
 
 let schema = yup.object().shape({
   slug: yup.string()
-  .max(10, 'Slug exceeds 10 character maximum 🥡')
-  .matches(/^[\w|\-|\0]{0,}$/i,'Slug contains invalid characters 🍔'),
+    .max(10, 'Slug exceeds 10 character maximum 🥡')
+    .matches(/^[\w|\-|\0]{0,}$/i, 'Slug contains invalid characters 🍔'),
   url: yup.string()
-  .url('URL must be a valid URL 🍟')
-  .required('URL is a required field 🧇'),
+    .url('URL must be a valid URL 🍟')
+    .required('URL is a required field 🧇'),
 })
 
 const mongoUri = process.env.MONGODB_URI
@@ -99,7 +112,7 @@ app.get('/:id', async (req, res, next) => {
     if (url) {
       res.redirect(url.url);
     } else {
-    res.redirect(`/?error=Slug: '${slug}' not found`);
+      res.redirect(`/?error=Slug: '${slug}' not found`);
     }
   } catch (error) {
     res.redirect(`/?error=Link not found`);
