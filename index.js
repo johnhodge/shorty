@@ -28,7 +28,7 @@ app.use(cors());
 app.set('trust proxy', 1);
 const apiLimiter = rateLimit({
   windowMs: 60 * 1000,
-  max: 1,
+  max: 3,
   message: {
     message: 'Too many calls, wait a minute 🍩',
     stack: '🥞'
