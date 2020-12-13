@@ -2,14 +2,14 @@
 
 An easily recreatable branded shortened URL generator.
 
-!["Shorty Logo"](./public/img/Shorty_Logo.png)
+![Shorty Logo](./public/img/Shorty_Logo.png)
 
 ## Getting Started
 
 ### Requirements
 
-- [NodeJS]("https://nodejs.com")
-- [MongoDB]("https://mongodb.com")
+- [NodeJS](https://nodejs.com)
+- [MongoDB](https://mongodb.com)
 
 [include a bulleted list of any dependencies your project requires. Include links to the dependencies, and additionally links to helpful resources to get up and running with the project's dependencies]
 
@@ -46,11 +46,11 @@ Customize as much as you like and push to production.
 
 ### Articles, Tutorials, etc
 
-- [MongoDB Realm]("https://docs.mongodb.com/realm/tutorial")
-- [Express API reference]("https://expressjs.com/en/api.html")
-- [API rate limiting with Express]("https://www.npmjs.com/package/express-rate-limit")
-- [Deploy NodeJS to Heroku]("https://devcenter.heroku.com/articles/deploying-nodejs")
-- [Yup docs]("https://www.npmjs.com/package/yup")
+- [MongoDB Realm](https://docs.mongodb.com/realm/tutorial)
+- [Express API reference](https://expressjs.com/en/api.html)
+- [API rate limiting with Express](https://www.npmjs.com/package/express-rate-limit)
+- [Deploy NodeJS to Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
+- [Yup docs](https://www.npmjs.com/package/yup)
 
 ### Support
 
