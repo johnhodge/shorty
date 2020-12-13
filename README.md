@@ -8,7 +8,7 @@ An easily recreatable branded shortened URL generator.
 
 ### Requirements
 
-- [NodeJS](https://nodejs.com)
+- [NodeJS](https://nodejs.org)
 - [MongoDB](https://mongodb.com)
 
 ### Installation
@@ -19,7 +19,7 @@ Clone repo
 git clone https://github.com/johnhodge/shorty.git
 ```
 
-Add `.env` file with MongoDB to project root.
+Add a `.env` file with MongoDB URL to project root.
 
 ```text
 cd shorty; echo "MONGODB_URI='{{INSERT MONGDO DB URL HERE}}'" > .env
