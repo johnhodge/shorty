@@ -2,7 +2,7 @@
 
 An easily recreatable branded shortened URL generator.
 
-![Shorty Logo](./public/img/Shorty_Logo.png)
+![Shorty Logo](./public/img/Shorty_Logo.svg)
 
 ## Getting Started
 
