@@ -11,27 +11,25 @@ An easily recreatable branded shortened URL generator.
 - [NodeJS](https://nodejs.com)
 - [MongoDB](https://mongodb.com)
 
-[include a bulleted list of any dependencies your project requires. Include links to the dependencies, and additionally links to helpful resources to get up and running with the project's dependencies]
-
 ### Installation
 
 Clone repo
 
-```````
+```text
 git clone https://github.com/johnhodge/shorty.git
-```````
+```
 
 Add `.env` file with MongoDB to project root.
 
-``````
+```text
 cd shorty; echo "MONGODB_URI='{{INSERT MONGDO DB URL HERE}}'" > .env
-``````
+```
 
 Install dependencies and launch development environment
 
-``````
+```text
 npm install && debug=true npm run dev
-``````
+```
 
 Customize as much as you like and push to production.
 
