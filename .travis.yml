@@ -1,8 +1,7 @@
 language: node_js
 node_js:
   - 14.11.0
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure: "YOUR ENCRYPTED API KEY"
-#   app: short-hodge
+deploy:
+  provider: heroku
+  api_key:
+    secure: mNbHahhtrwF940SYfb1oGMjrdrPVyLnMMSWdbyoAr9n6s598BnoESn2X9Sn1ZwT5AxpfG2ci788s4lF0jVN/rRpa0EhtdV1LrpaOhUY6hsQNDHLrRhdZg9e7cDG80RckY+prr+2lMpWLTEY0XtxNCzfAg0r5NyUanIRYa8qrd59wPpJfiCYFJjabdvKePEWCpRjEyeArZAW30d9Il4jB0ar1UPYNzp0i7F9i9qiqtpYAPjxpbJXJymPtrpx1WScCL7iAQU7TRcUvnvyfIuTqVww5vjUulSWWDEXl4hx+StKFM46HSRQj1EiFMqhbbT9V0rg/08qNZoPL7WdEKiWcZKTo0Kt9XrWIcpQfCiy0apW0+tZsULMsR53fchF/oPMBYH7bOaNgLhyF/6WoHk1rAI5eq7NVveOLideqRD4pry65nl5PgpvWHuFGT0H6ZoFUB4LSop18f+Uy5iD7OVXAeGsaCrrZDSMGRPkUZbtqldr/88tAvsCQ0XuFLkGSsswHbOSGFbUgylLpMM0lO/Cx6OlNhTUJZs86nYmwsWnJsmKkbO/FhNqI0o0fu++oP2OwGD0v5ikPkwbvbum+uBluISNm8c9gvbY6v0AQLGfXjjXRfIp9tICzqlTBFtnE5gcRVXCrJwAmQBXxI3Dm9V0Aw/ten88q9w+DXeeZdVHf7Oo=
