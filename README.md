@@ -3,6 +3,7 @@
 An easily recreatable branded shortened URL generator.
 
 ![Shorty Logo](./public/img/Shorty_Logo.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/johnhodge/shorty/badge/master?s=452b784a695acd9622302e927134242e94233854)](https://www.codefactor.io/repository/github/johnhodge/shorty/overview/master) [![Build status](https://ci.appveyor.com/api/projects/status/8u4c6uhwkq39u4o2?svg=true)](https://ci.appveyor.com/project/johnhodge/shorty) ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m786659961-5e2a5af708ee13a93d5cb995) ![Uptime Robot status](https://img.shields.io/uptimerobot/status/m786659961-5e2a5af708ee13a93d5cb995) ![GitHub issues](https://img.shields.io/github/issues/johnhodge/shorty)
 
 ## Getting Started
 
