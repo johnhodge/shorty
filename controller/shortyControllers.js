@@ -2,19 +2,8 @@ const schema = require('../models/shortyModels');
 const urls = require('../db');
 const { nanoid } = require('nanoid');
 
-exports.run_redirect_get = (async (req, res, next) => {
-  const { id: slug } = req.params;
-  try {
-    const url = await urls.findOne({ slug });
-    if (url) {
-      res.redirect(url.url);
-    } else {
-      res.redirect(`/?error=Slug: '${slug}' not found`);
-    }
-  } catch (error) {
-    res.redirect(`/?error=Link not found`);
-  }
-  // res.render('index', { title: 'Hey', message: 'Hello there!' })
+exports.setup_form_get = ((req, res) => {
+  res.render('index');
 });
 
 exports.create_redirect_post = (async (req, res, next) => {
@@ -42,5 +31,18 @@ exports.create_redirect_post = (async (req, res, next) => {
     }
     next(error);
   }
-  // res.render('index', { title: 'Hey', message: 'Hello there!' })
+});
+
+exports.run_redirect_get = (async (req, res, next) => {
+  const { id: slug } = req.params;
+  try {
+    const url = await urls.findOne({ slug });
+    if (url) {
+      res.redirect(url.url);
+    } else {
+      res.redirect(`/?error=Slug: '${slug}' not found`);
+    }
+  } catch (error) {
+    res.redirect(`/?error=Link not found`);
+  }
 });

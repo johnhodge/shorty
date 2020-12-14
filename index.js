@@ -41,7 +41,7 @@ app.listen(port, () => {
   console.log(`\nListening at http://${host}:${port}`);
 })
 
-app.set('view engine', 'pug')
+// app.set('view engine', 'pug')
 
 app.use((error, req, res, next) => {
   if (error.status) {
