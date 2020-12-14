@@ -5,7 +5,8 @@
   "engines": {},
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon --trace-warnings index.js"
+    "dev": "nodemon --trace-warnings index.js",
+    "test": "xo"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -22,5 +23,8 @@
     "nodemon": "^2.0.6",
     "pug": "^3.0.0",
     "yup": "^0.31.0"
+  },
+  "devDependencies": {
+    "xo": "^0.36.1"
   }
 }
