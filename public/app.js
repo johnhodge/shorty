@@ -26,7 +26,27 @@ var app = new Vue({
         })
       });
       this.created = await response.json();
-      this.link = `${this.host}${this.created.slug}`
-    }
+      this.link = `${this.host}${this.created.slug}`;
+    },
+      copyShorty () {
+        let shortyMessage = document.querySelector(".link-message");
+        console.log(shortyMessage);
+        let shortyToCopy = document.querySelector('#copied-shorty');
+        shortyToCopy.setAttribute('type', 'text');
+        shortyToCopy.select();
+
+        try {
+          var successful = document.execCommand('copy');
+          // var msg = successful ? 'successful' : 'unsuccessful';
+          shortyMessage.append(" 🎉 🎉")
+          // alert('Testing code was copied ' + msg);
+        } catch (err) {
+          shortyMessage.append(" 🛑 🛑");
+        }
+
+        /* unselect the range */
+        shortyToCopy.setAttribute('type', 'hidden');
+        window.getSelection().removeAllRanges();
+      },
   }
 })
