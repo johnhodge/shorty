@@ -38,10 +38,10 @@ var app = new Vue({
         try {
           var successful = document.execCommand('copy');
           // var msg = successful ? 'successful' : 'unsuccessful';
-          shortyMessage.append(" 🎉 🎉")
+          shortyMessage.append(" 🎉 Copied!")
           // alert('Testing code was copied ' + msg);
         } catch (err) {
-          shortyMessage.append(" 🛑 🛑");
+          shortyMessage.append(" 🛑 Not copied.");
         }
 
         /* unselect the range */
