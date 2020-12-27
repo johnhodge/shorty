@@ -206,4 +206,16 @@ section.main_section__notifications {
 
 p.link-message {
   height: var(--sizing-medium);
+  line-height: 1.2;
+}
+
+.icon > svg {
+  stroke: var(--color-success);
+  width: auto;
+  height: 100%;
+  margin-left: var(--sizing-small);
+}
+
+.icon > svg:hover {
+  cursor: pointer;
 }
