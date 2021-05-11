@@ -8,19 +8,15 @@
     "dev": "nodemon --trace-warnings index.js"
   },
   "dependencies": {
-    
-    "cors": "^2.8.5",
-    
+    "cors": "^2.8.5",    
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
     "express-rate-limit": "^5.2.3",
-    "helmet": "^4.2.0",
-    
+    "helmet": "^4.2.0",    
     "monk": "^7.3.2",
     "morgan": "~1.9.1",
     "nanoid": "^3.1.18",
-    "nodemon": "^2.0.6",
-    
+    "nodemon": "^2.0.6",    
     "yup": "^0.31.0"
   }
 }
