@@ -3,7 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
-const rateLimit = require("express-rate-limit");
+const rateLimit = require('express-rate-limit');
 
 const shortyRouter = require('./routes/shortyRoutes');
 
@@ -27,17 +27,17 @@ const apiLimiter = rateLimit({
   max: 3,
   message: {
     message: 'Too many calls, wait a minute 🍩',
-    stack: '🥞'
-  }
-})
-app.use("/api/", apiLimiter);
+    stack: '🥞',
+  },
+});
+app.use('/api/', apiLimiter);
 app.use('/', shortyRouter);
 
 const port = process.env.PORT || 1234;
 const host = process.env.HOST || 'localhost';
 app.listen(port, () => {
   console.log(`\nListening at http://${host}:${port}`);
-})
+});
 
 // app.set('view engine', 'pug')
 
@@ -49,8 +49,8 @@ app.use((error, req, res, next) => {
   }
   res.json({
     message: error.message,
-    stack: process.env.NODE_ENV === 'production' ? '🥞' : error.stack
-  })
+    stack: process.env.NODE_ENV === 'production' ? '🥞' : error.stack,
+  });
 });
 
 module.exports = app;
